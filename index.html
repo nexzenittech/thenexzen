@@ -1,1 +1,771 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nexzen IT Technologies — IT Products & Services Chandigarh</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#00a651;
+  --green-dark:#007a3d;
+  --green-light:#e6f7ee;
+  --green-mid:#00c261;
+  --black:#0a0f0a;
+  --near-black:#111611;
+  --gray-dark:#2a2f2a;
+  --gray-mid:#5a6358;
+  --gray-light:#f0f4f0;
+  --white:#ffffff;
+  --border:#dde8dd;
+  --accent:#ff5c00;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  background:var(--black);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;height:64px;
+}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{
+  width:36px;height:36px;background:var(--green);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',cursive;font-size:18px;color:var(--black);letter-spacing:1px;
+}
+.logo-name{font-family:'Bebas Neue',cursive;font-size:22px;color:var(--white);letter-spacing:2px}
+.logo-name span{color:var(--green)}
+.nav-menu{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-menu a{text-decoration:none;color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;letter-spacing:.5px;transition:color .2s}
+.nav-menu a:hover{color:var(--white)}
+.nav-btn{
+  background:var(--green);color:var(--black) !important;
+  padding:9px 20px;border-radius:5px;font-weight:600 !important;
+  letter-spacing:.5px;transition:background .2s !important;
+}
+.nav-btn:hover{background:var(--green-mid) !important}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;background:var(--black);
+  display:flex;align-items:center;
+  padding:80px 6% 0;
+  position:relative;overflow:hidden;
+}
+/* diagonal split */
+.hero::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:120px;background:var(--white);
+  clip-path:polygon(0 100%,100% 0,100% 100%);
+  z-index:2;
+}
+.hero-noise{
+  position:absolute;inset:0;opacity:.04;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+.hero-accent-line{
+  position:absolute;top:0;right:28%;width:1px;height:100%;
+  background:linear-gradient(to bottom,transparent,rgba(0,166,81,0.3),transparent);
+}
+.hero-content{
+  max-width:1200px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;
+  align-items:center;position:relative;z-index:1;
+  padding-bottom:120px;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:var(--green);margin-bottom:24px;
+  animation:fadeUp .5s ease both;
+}
+.hero-eyebrow-line{width:32px;height:1px;background:var(--green)}
+.hero h1{
+  font-family:'Bebas Neue',cursive;
+  font-size:clamp(4rem,7vw,7rem);
+  line-height:.95;letter-spacing:2px;
+  color:var(--white);margin-bottom:28px;
+  animation:fadeUp .5s .1s ease both;
+}
+.hero h1 .hg{color:var(--green)}
+.hero h1 .hsmall{font-size:clamp(2rem,4vw,3.8rem);display:block}
+.hero-sub{
+  font-size:1.05rem;line-height:1.75;color:rgba(255,255,255,0.55);
+  max-width:460px;margin-bottom:40px;
+  animation:fadeUp .5s .2s ease both;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .5s .3s ease both}
+.hbtn-primary{
+  background:var(--green);color:var(--black);
+  padding:14px 30px;border-radius:6px;
+  font-weight:700;font-size:15px;text-decoration:none;
+  transition:background .2s,transform .2s;
+}
+.hbtn-primary:hover{background:var(--green-mid);transform:translateY(-2px)}
+.hbtn-outline{
+  background:transparent;color:var(--white);
+  padding:14px 30px;border-radius:6px;
+  font-weight:600;font-size:15px;text-decoration:none;
+  border:1px solid rgba(255,255,255,0.2);
+  transition:border-color .2s,color .2s;
+}
+.hbtn-outline:hover{border-color:var(--green);color:var(--green)}
+
+/* hero right panel */
+.hero-panel{
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  border-radius:16px;padding:32px;
+  animation:fadeUp .5s .3s ease both;
+}
+.hp-title{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:20px}
+.hp-items{display:flex;flex-direction:column;gap:2px}
+.hp-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.hp-row:last-child{border-bottom:none}
+.hp-left{display:flex;align-items:center;gap:10px}
+.hp-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+.hp-name{font-size:14px;color:rgba(255,255,255,0.8);font-weight:500}
+.hp-brands{font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px}
+.hp-arrow{color:rgba(255,255,255,0.2);font-size:16px}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:rgba(255,255,255,0.06);border-radius:10px;overflow:hidden;
+  margin-top:2px;
+}
+.hs-item{background:rgba(255,255,255,0.03);padding:16px 12px;text-align:center}
+.hs-num{font-family:'Bebas Neue',cursive;font-size:2rem;color:var(--green);letter-spacing:1px;line-height:1}
+.hs-lbl{font-size:10px;color:rgba(255,255,255,0.35);font-weight:500;margin-top:3px;letter-spacing:.5px;text-transform:uppercase}
+
+/* ── SCROLLING TICKER ── */
+.ticker{
+  background:var(--green);padding:11px 0;
+  overflow:hidden;position:relative;z-index:2;
+}
+.ticker-inner{display:flex;animation:ticker 25s linear infinite;white-space:nowrap}
+.ticker-item{
+  display:inline-flex;align-items:center;gap:8px;padding:0 24px;
+  font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--black);
+}
+.ticker-sep{color:rgba(0,0,0,0.3);font-size:10px}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── PRODUCTS ── */
+#products{padding:100px 6%;background:var(--white)}
+.section-head{margin-bottom:60px}
+.sec-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--green);margin-bottom:12px;
+}
+.sec-tag::before{content:'';width:24px;height:2px;background:var(--green)}
+.section-head h2{
+  font-family:'Bebas Neue',cursive;
+  font-size:clamp(2.8rem,5vw,5rem);
+  letter-spacing:2px;line-height:.95;
+  color:var(--black);margin-bottom:14px;
+}
+.section-head p{font-size:1rem;color:var(--gray-mid);max-width:500px;line-height:1.7}
+
+.prod-layout{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.prod-tile{
+  background:var(--white);padding:36px 30px;
+  transition:background .3s;cursor:pointer;
+  position:relative;overflow:hidden;
+}
+.prod-tile::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:var(--green);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.prod-tile:hover{background:var(--gray-light)}
+.prod-tile:hover::before{transform:scaleX(1)}
+.pt-num{
+  font-family:'Bebas Neue',cursive;font-size:3rem;
+  color:var(--border);line-height:1;margin-bottom:16px;
+  transition:color .3s;
+}
+.prod-tile:hover .pt-num{color:var(--green-light)}
+.pt-icon{font-size:28px;margin-bottom:14px}
+.pt-name{
+  font-family:'Bebas Neue',cursive;font-size:1.6rem;
+  letter-spacing:1px;color:var(--black);margin-bottom:10px;
+}
+.pt-desc{font-size:13px;color:var(--gray-mid);line-height:1.65;margin-bottom:16px}
+.pt-brand-row{display:flex;flex-wrap:wrap;gap:6px}
+.pt-brand{
+  font-size:11px;font-weight:700;letter-spacing:.5px;
+  color:var(--green-dark);background:var(--green-light);
+  padding:3px 10px;border-radius:3px;
+}
+
+/* ── SERVICES ── */
+#services{
+  padding:100px 6%;
+  background:var(--black);
+  position:relative;overflow:hidden;
+}
+#services::before{
+  content:'SERVICES';
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Bebas Neue',cursive;font-size:20vw;
+  color:rgba(255,255,255,0.02);pointer-events:none;white-space:nowrap;letter-spacing:4px;
+}
+.services-inner{max-width:1200px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.svc-left .sec-tag{color:var(--green)}
+.svc-left h2{
+  font-family:'Bebas Neue',cursive;font-size:clamp(2.8rem,5vw,5rem);
+  letter-spacing:2px;line-height:.95;color:var(--white);margin-bottom:20px;
+}
+.svc-left p{font-size:1rem;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:36px}
+
+.svc-cards{display:flex;flex-direction:column;gap:12px}
+.svc-card{
+  display:flex;gap:16px;align-items:flex-start;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);
+  border-radius:10px;padding:20px 22px;
+  transition:border-color .2s,background .2s;
+}
+.svc-card:hover{border-color:rgba(0,166,81,0.4);background:rgba(0,166,81,0.05)}
+.svc-card-icon{
+  width:44px;height:44px;border-radius:8px;
+  background:rgba(0,166,81,0.15);border:1px solid rgba(0,166,81,0.25);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+.svc-card h4{font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px}
+.svc-card p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6}
+
+/* AMC block */
+.amc-block{
+  background:linear-gradient(135deg,var(--green-dark),var(--green));
+  border-radius:16px;padding:40px;position:relative;overflow:hidden;
+}
+.amc-block::before{
+  content:'AMC';font-family:'Bebas Neue',cursive;
+  position:absolute;right:-10px;top:-10px;
+  font-size:8rem;color:rgba(0,0,0,0.12);line-height:1;letter-spacing:2px;
+}
+.amc-block h3{
+  font-family:'Bebas Neue',cursive;font-size:2.2rem;
+  letter-spacing:1px;color:var(--black);margin-bottom:8px;
+}
+.amc-block p{font-size:14px;color:rgba(0,0,0,0.65);line-height:1.65;margin-bottom:24px}
+.amc-list{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.amc-item{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(0,0,0,0.75);font-weight:500}
+.amc-check{
+  width:20px;height:20px;border-radius:50%;
+  background:rgba(0,0,0,0.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:var(--black);flex-shrink:0;
+}
+.amc-btn{
+  display:inline-block;background:var(--black);color:var(--green);
+  padding:12px 24px;border-radius:6px;
+  font-weight:700;font-size:14px;text-decoration:none;
+  transition:background .2s;
+}
+.amc-btn:hover{background:var(--near-black)}
+
+/* ── BRANDS ── */
+#brands{padding:100px 6%;background:var(--gray-light)}
+.brands-inner{max-width:1200px;margin:0 auto}
+.brands-header-row{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;flex-wrap:wrap;gap:20px}
+.brands-header-row h2{
+  font-family:'Bebas Neue',cursive;
+  font-size:clamp(2.8rem,4vw,4.5rem);letter-spacing:2px;line-height:.95;
+}
+
+.brand-section{margin-bottom:48px}
+.bsec-label{
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gray-mid);margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.bsec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.brand-card{
+  background:var(--white);border:1.5px solid var(--border);border-radius:10px;
+  padding:18px 14px;text-align:center;
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.brand-card:hover{
+  border-color:var(--green);transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,166,81,0.12);
+}
+.brand-card-icon{font-size:28px;margin-bottom:8px}
+.brand-card-name{
+  font-family:'Bebas Neue',cursive;font-size:1.1rem;
+  letter-spacing:1px;color:var(--black);
+}
+.brand-card-type{font-size:11px;color:var(--gray-mid);margin-top:2px}
+
+/* ── SOFTWARE ── */
+#software{
+  padding:80px 6%;
+  background:var(--white);
+  border-top:2px solid var(--green);
+}
+.sw-inner{max-width:1200px;margin:0 auto}
+.sw-grid{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:center}
+.sw-left h2{
+  font-family:'Bebas Neue',cursive;font-size:clamp(2.5rem,4vw,4rem);
+  letter-spacing:2px;line-height:.95;color:var(--black);margin-bottom:16px;
+}
+.sw-left p{font-size:14px;color:var(--gray-mid);line-height:1.7}
+.sw-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sw-tile{
+  background:var(--gray-light);border-radius:12px;
+  padding:22px 18px;text-align:center;
+  border:1.5px solid transparent;
+  transition:border-color .2s,background .2s,transform .2s;
+}
+.sw-tile:hover{border-color:var(--green);background:var(--green-light);transform:translateY(-3px)}
+.sw-tile-icon{font-size:34px;margin-bottom:10px}
+.sw-tile h4{font-family:'Bebas Neue',cursive;font-size:1.1rem;letter-spacing:.5px;color:var(--black);margin-bottom:4px}
+.sw-tile p{font-size:12px;color:var(--gray-mid)}
+
+/* ── CONTACT ── */
+#contact{padding:100px 6%;background:var(--black)}
+.contact-wrap{max-width:1200px;margin:0 auto}
+.contact-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.ct-left .sec-tag{color:var(--green)}
+.ct-left h2{
+  font-family:'Bebas Neue',cursive;font-size:clamp(3rem,5vw,5.5rem);
+  letter-spacing:2px;line-height:.9;color:var(--white);margin-bottom:20px;
+}
+.ct-left p{font-size:1rem;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:40px}
+.ct-info{display:flex;flex-direction:column;gap:20px}
+.ct-item{display:flex;gap:14px;align-items:flex-start}
+.ct-ic{
+  width:42px;height:42px;border-radius:8px;
+  border:1px solid rgba(0,166,81,0.3);background:rgba(0,166,81,0.08);
+  display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;
+}
+.ct-item-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:4px}
+.ct-item-val{font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6}
+.ct-item-val a{color:var(--green);text-decoration:none}
+.ct-item-val a:hover{text-decoration:underline}
+
+.ct-form{background:var(--white);border-radius:16px;padding:40px}
+.ct-form h3{font-family:'Bebas Neue',cursive;font-size:1.8rem;letter-spacing:1px;color:var(--black);margin-bottom:24px}
+.cf-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cf-g{margin-bottom:16px}
+.cf-g label{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray-mid);margin-bottom:7px}
+.cf-g input,.cf-g textarea,.cf-g select{
+  width:100%;background:var(--gray-light);border:1.5px solid var(--border);
+  border-radius:7px;padding:11px 14px;
+  font-family:'DM Sans',sans-serif;font-size:14px;color:var(--black);
+  outline:none;transition:border-color .2s;
+}
+.cf-g input:focus,.cf-g textarea:focus,.cf-g select:focus{border-color:var(--green)}
+.cf-g textarea{height:100px;resize:vertical}
+.cf-submit{
+  width:100%;background:var(--green);color:var(--black);border:none;
+  border-radius:7px;padding:15px;
+  font-family:'Bebas Neue',cursive;font-size:1.2rem;letter-spacing:2px;
+  cursor:pointer;transition:background .2s,transform .2s;
+}
+.cf-submit:hover{background:var(--green-mid);transform:translateY(-1px)}
+
+/* ── FOOTER ── */
+footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,0.06);padding:56px 6% 28px}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.ft-brand p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.75;margin-top:14px;max-width:240px}
+.ft-col-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.ft-col ul a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color .2s}
+.ft-col ul a:hover{color:var(--green)}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px}
+.ft-copy{font-size:12px;color:rgba(255,255,255,0.25)}
+.ft-green{color:var(--green)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-20px);transition:opacity .6s ease,transform .6s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  .hero-content,.services-grid,.contact-top,.sw-grid{grid-template-columns:1fr}
+  .hero-panel{display:none}
+  nav .nav-menu{display:none}
+  .prod-layout{grid-template-columns:1fr 1fr}
+  .sw-tiles{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .prod-layout{grid-template-columns:1fr}
+  .cf-2{grid-template-columns:1fr}
+  .sw-tiles{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">
+    <div class="logo-mark">NX</div>
+    <span class="logo-name">NEXZEN <span>IT</span></span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#brands">Brands</a></li>
+    <li><a href="#software">Software</a></li>
+    <li><a href="#contact" class="nav-btn">Get Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-accent-line"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span>Chandigarh's #1 IT Solutions Partner</div>
+      <h1>YOUR<br><span class="hg">COMPLETE</span><br><span class="hsmall">IT PARTNER</span></h1>
+      <p class="hero-sub">Servers, desktops, laptops, networking, UPS, software & full IT support — everything your business needs, all from one trusted source in Chandigarh.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="hbtn-primary">Get Free Quote</a>
+        <a href="#products" class="hbtn-outline">Browse Products</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="hp-title">Products We Supply</div>
+      <div class="hp-items">
+        <div class="hp-row"><div class="hp-left"><div class="hp-dot"></div><div><div class="hp-name">Servers</div><div class="hp-brands">Dell · HP · Lenovo</div></div></div><span class="hp-arrow">›</span></div>
+        <div class="hp-row"><div class="hp-left"><div class="hp-dot"></div><div><div class="hp-name">Desktops & Laptops</div><div class="hp-brands">Dell · HP · Lenovo</div></div></div><span class="hp-arrow">›</span></div>
+        <div class="hp-row"><div class="hp-left"><div class="hp-dot"></div><div><div class="hp-name">Networking</div><div class="hp-brands">D-Link · TP-Link · Aruba · Netgear</div></div></div><span class="hp-arrow">›</span></div>
+        <div class="hp-row"><div class="hp-left"><div class="hp-dot"></div><div><div class="hp-name">UPS Solutions</div><div class="hp-brands">APC · Numeric · Eton</div></div></div><span class="hp-arrow">›</span></div>
+        <div class="hp-row"><div class="hp-left"><div class="hp-dot"></div><div><div class="hp-name">Software Licenses</div><div class="hp-brands">Microsoft · Adobe & more</div></div></div><span class="hp-arrow">›</span></div>
+        <div class="hp-row"><div class="hp-left"><div class="hp-dot"></div><div><div class="hp-name">IT AMC Services</div><div class="hp-brands">Tailored for IT companies</div></div></div><span class="hp-arrow">›</span></div>
+      </div>
+      <div class="hero-stats">
+        <div class="hs-item"><div class="hs-num">500+</div><div class="hs-lbl">Products</div></div>
+        <div class="hs-item"><div class="hs-num">200+</div><div class="hs-lbl">Clients</div></div>
+        <div class="hs-item"><div class="hs-num">10+</div><div class="hs-lbl">Years</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Dell Servers <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">HP Desktops <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Lenovo Laptops <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">D-Link Switches <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">TP-Link Routers <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Aruba WiFi <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">APC UPS <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Numeric UPS <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Microsoft 365 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Adobe Creative Cloud <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">IT AMC <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Netgear Networking <span class="ticker-sep">◆</span></span>
+    <!-- duplicate -->
+    <span class="ticker-item">Dell Servers <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">HP Desktops <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Lenovo Laptops <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">D-Link Switches <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">TP-Link Routers <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Aruba WiFi <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">APC UPS <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Numeric UPS <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Microsoft 365 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Adobe Creative Cloud <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">IT AMC <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Netgear Networking <span class="ticker-sep">◆</span></span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-head reveal">
+    <div class="sec-tag">Product Catalog</div>
+    <h2>WHAT WE<br>SUPPLY</h2>
+    <p>Enterprise-grade IT hardware and software from the world's top brands — supplied, configured, and supported by our certified team.</p>
+  </div>
+  <div class="prod-layout">
+    <div class="prod-tile reveal">
+      <div class="pt-num">01</div>
+      <div class="pt-icon">🖧</div>
+      <div class="pt-name">Servers</div>
+      <p class="pt-desc">Rack, tower & blade servers for SMBs to enterprise data centres. Full configuration and deployment included.</p>
+      <div class="pt-brand-row"><span class="pt-brand">Dell</span><span class="pt-brand">HP / HPE</span><span class="pt-brand">Lenovo</span></div>
+    </div>
+    <div class="prod-tile reveal">
+      <div class="pt-num">02</div>
+      <div class="pt-icon">🖥️</div>
+      <div class="pt-name">Desktops</div>
+      <p class="pt-desc">Business-grade desktop workstations for offices and enterprises. Bulk orders with competitive pricing available.</p>
+      <div class="pt-brand-row"><span class="pt-brand">Dell</span><span class="pt-brand">HP</span><span class="pt-brand">Lenovo</span></div>
+    </div>
+    <div class="prod-tile reveal">
+      <div class="pt-num">03</div>
+      <div class="pt-icon">💻</div>
+      <div class="pt-name">Laptops</div>
+      <p class="pt-desc">Professional laptops and ultrabooks for executives, field teams, and developers. Single or fleet procurement.</p>
+      <div class="pt-brand-row"><span class="pt-brand">Dell</span><span class="pt-brand">HP</span><span class="pt-brand">Lenovo</span></div>
+    </div>
+    <div class="prod-tile reveal">
+      <div class="pt-num">04</div>
+      <div class="pt-icon">🌐</div>
+      <div class="pt-name">Networking</div>
+      <p class="pt-desc">Switches, routers, access points, firewalls & structured cabling. Complete network infrastructure setup.</p>
+      <div class="pt-brand-row"><span class="pt-brand">D-Link</span><span class="pt-brand">TP-Link</span><span class="pt-brand">Netgear</span><span class="pt-brand">Aruba HP</span></div>
+    </div>
+    <div class="prod-tile reveal">
+      <div class="pt-num">05</div>
+      <div class="pt-icon">🔋</div>
+      <div class="pt-name">UPS & Power</div>
+      <p class="pt-desc">Uninterrupted power solutions for servers, workstations & data centres. Single & three-phase UPS systems.</p>
+      <div class="pt-brand-row"><span class="pt-brand">APC</span><span class="pt-brand">Numeric</span><span class="pt-brand">Eton</span></div>
+    </div>
+    <div class="prod-tile reveal">
+      <div class="pt-num">06</div>
+      <div class="pt-icon">📋</div>
+      <div class="pt-name">AMC Services</div>
+      <p class="pt-desc">Annual Maintenance Contracts for IT companies — comprehensive coverage with priority response and reporting.</p>
+      <div class="pt-brand-row"><span class="pt-brand">All Brands</span><span class="pt-brand">Custom Plans</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-inner">
+    <div class="services-grid">
+      <div class="svc-left reveal-left">
+        <div class="sec-tag">IT Services</div>
+        <h2>WE KEEP<br>YOU RUNNING</h2>
+        <p>Beyond selling products — our certified engineers provide complete IT setup, maintenance, and support services for businesses across Chandigarh and the tricity region.</p>
+        <div class="svc-cards">
+          <div class="svc-card"><div class="svc-card-icon">🔧</div><div><h4>Hardware Setup & Installation</h4><p>On-site server rack setup, desktop deployment, and complete office IT infrastructure installation.</p></div></div>
+          <div class="svc-card"><div class="svc-card-icon">🌐</div><div><h4>Network Design & Cabling</h4><p>LAN/WAN design, structured cabling, Wi-Fi deployment, and firewall configuration.</p></div></div>
+          <div class="svc-card"><div class="svc-card-icon">☁️</div><div><h4>Cloud & Microsoft 365</h4><p>Migration, licensing and management of cloud platforms for seamless team collaboration.</p></div></div>
+          <div class="svc-card"><div class="svc-card-icon">🛠️</div><div><h4>On-Site & Remote Helpdesk</h4><p>Fast IT support — at your office or remote — to resolve issues before they impact your business.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="amc-block">
+          <h3>Annual Maintenance Contracts</h3>
+          <p>Keep your IT infrastructure at peak performance with our comprehensive AMC packages designed specifically for IT companies and growing businesses.</p>
+          <div class="amc-list">
+            <div class="amc-item"><div class="amc-check">✓</div>Quarterly preventive maintenance visits</div>
+            <div class="amc-item"><div class="amc-check">✓</div>Priority response within 4 working hours</div>
+            <div class="amc-item"><div class="amc-check">✓</div>Hardware repair & replacement coverage</div>
+            <div class="amc-item"><div class="amc-check">✓</div>Network health monitoring & reports</div>
+            <div class="amc-item"><div class="amc-check">✓</div>Software patching & update management</div>
+            <div class="amc-item"><div class="amc-check">✓</div>Dedicated account manager assigned</div>
+          </div>
+          <a href="#contact" class="amc-btn">Request AMC Proposal →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section id="brands">
+  <div class="brands-inner">
+    <div class="brands-header-row reveal">
+      <div>
+        <div class="sec-tag">Our Partners</div>
+        <h2>AUTHORISED<br>BRANDS</h2>
+      </div>
+      <p style="max-width:340px;font-size:14px;color:var(--gray-mid);line-height:1.7">We are authorised dealers for the world's leading technology brands — every product comes with full manufacturer warranty and genuine certification.</p>
+    </div>
+    <div class="brand-section reveal">
+      <div class="bsec-label">Servers · Desktops · Laptops</div>
+      <div class="brand-grid">
+        <div class="brand-card"><div class="brand-card-icon">🖧</div><div class="brand-card-name">Dell</div><div class="brand-card-type">Technologies</div></div>
+        <div class="brand-card"><div class="brand-card-icon">🖥️</div><div class="brand-card-name">HP / HPE</div><div class="brand-card-type">Hardware</div></div>
+        <div class="brand-card"><div class="brand-card-icon">💻</div><div class="brand-card-name">Lenovo</div><div class="brand-card-type">Computing</div></div>
+      </div>
+    </div>
+    <div class="brand-section reveal">
+      <div class="bsec-label">Networking Equipment</div>
+      <div class="brand-grid">
+        <div class="brand-card"><div class="brand-card-icon">🌐</div><div class="brand-card-name">D-Link</div><div class="brand-card-type">Networking</div></div>
+        <div class="brand-card"><div class="brand-card-icon">📡</div><div class="brand-card-name">TP-Link</div><div class="brand-card-type">Routers & Switches</div></div>
+        <div class="brand-card"><div class="brand-card-icon">🔌</div><div class="brand-card-name">Netgear</div><div class="brand-card-type">Enterprise Network</div></div>
+        <div class="brand-card"><div class="brand-card-icon">📶</div><div class="brand-card-name">Aruba HP</div><div class="brand-card-type">Wireless Solutions</div></div>
+      </div>
+    </div>
+    <div class="brand-section reveal">
+      <div class="bsec-label">UPS & Power Solutions</div>
+      <div class="brand-grid">
+        <div class="brand-card"><div class="brand-card-icon">⚡</div><div class="brand-card-name">APC</div><div class="brand-card-type">by Schneider Electric</div></div>
+        <div class="brand-card"><div class="brand-card-icon">🔋</div><div class="brand-card-name">Numeric</div><div class="brand-card-type">Power Solutions</div></div>
+        <div class="brand-card"><div class="brand-card-icon">🔌</div><div class="brand-card-name">Eton</div><div class="brand-card-type">UPS Systems</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOFTWARE -->
+<section id="software">
+  <div class="sw-inner">
+    <div class="sw-grid">
+      <div class="reveal-left">
+        <div class="sec-tag">Software</div>
+        <h2>GENUINE<br>LICENSES</h2>
+        <p style="font-size:14px;color:var(--gray-mid);line-height:1.75;margin-top:12px">We supply genuine, licensed software for productivity, security, creativity, and enterprise management — with full support and activation assistance.</p>
+      </div>
+      <div class="sw-tiles reveal">
+        <div class="sw-tile"><div class="sw-tile-icon">🪟</div><h4>Windows OS</h4><p>Windows 11 Pro, Home & Server editions</p></div>
+        <div class="sw-tile"><div class="sw-tile-icon">📧</div><h4>Microsoft 365</h4><p>Business Basic, Standard & Premium plans</p></div>
+        <div class="sw-tile"><div class="sw-tile-icon">🎨</div><h4>Adobe Suite</h4><p>Creative Cloud, Acrobat, Photoshop</p></div>
+        <div class="sw-tile"><div class="sw-tile-icon">🔐</div><h4>Antivirus</h4><p>Enterprise endpoint protection & security</p></div>
+        <div class="sw-tile"><div class="sw-tile-icon">💾</div><h4>Backup Tools</h4><p>Automated cloud & local backup solutions</p></div>
+        <div class="sw-tile"><div class="sw-tile-icon">📦</div><h4>& Many More</h4><p>Contact us for any software requirement</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="contact-top">
+      <div class="ct-left reveal-left">
+        <div class="sec-tag">Contact Us</div>
+        <h2>GET A<br>FREE<br>QUOTE</h2>
+        <p>Tell us what you need — from a single laptop to a full server room setup — and we'll get back to you with the best price within 24 hours.</p>
+        <div class="ct-info">
+          <div class="ct-item">
+            <div class="ct-ic">📧</div>
+            <div>
+              <div class="ct-item-label">Email</div>
+              <div class="ct-item-val"><a href="mailto:pc@thenexzen.in">pc@thenexzen.in</a><br/><a href="mailto:mohinder@thenexzen.in">mohinder@thenexzen.in</a></div>
+            </div>
+          </div>
+          <div class="ct-item">
+            <div class="ct-ic">📞</div>
+            <div>
+              <div class="ct-item-label">Call Us</div>
+              <div class="ct-item-val"><a href="tel:+919056266664">+91 90562 66664</a><br/><a href="tel:+917018876460">+91 70188 76460</a></div>
+            </div>
+          </div>
+          <div class="ct-item">
+            <div class="ct-ic">📍</div>
+            <div>
+              <div class="ct-item-label">Visit Us</div>
+              <div class="ct-item-val">Plot No 803, 1st Floor<br/>Industrial Area, Phase 2<br/>Chandigarh</div>
+            </div>
+          </div>
+          <div class="ct-item">
+            <div class="ct-ic">🕐</div>
+            <div>
+              <div class="ct-item-label">Hours</div>
+              <div class="ct-item-val">Mon – Sat: 10:00 AM – 6:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ct-form reveal">
+        <h3>Send a Message</h3>
+        <div class="cf-2">
+          <div class="cf-g"><label>Your Name</label><input type="text" placeholder="Full name"/></div>
+          <div class="cf-g"><label>Phone</label><input type="tel" placeholder="+91 00000 00000"/></div>
+        </div>
+        <div class="cf-g"><label>Email</label><input type="email" placeholder="you@company.com"/></div>
+        <div class="cf-g"><label>Company</label><input type="text" placeholder="Your company name"/></div>
+        <div class="cf-g">
+          <label>Interested In</label>
+          <select>
+            <option>Servers (Dell / HP / Lenovo)</option>
+            <option>Desktops</option>
+            <option>Laptops</option>
+            <option>Networking Equipment</option>
+            <option>UPS / Power Solutions</option>
+            <option>Software Licenses (Microsoft / Adobe)</option>
+            <option>Annual Maintenance Contract (AMC)</option>
+            <option>Complete IT Setup / Multiple Products</option>
+          </select>
+        </div>
+        <div class="cf-g"><label>Requirements</label><textarea placeholder="Describe your requirement — quantity, brands, budget…"></textarea></div>
+        <button class="cf-submit" onclick="alert('Thank you! We will contact you within 24 hours.')">SEND MESSAGE →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <a class="logo" href="#" style="text-decoration:none">
+        <div class="logo-mark">NX</div>
+        <span class="logo-name">NEXZEN <span>IT</span></span>
+      </a>
+      <p>Your complete IT solutions partner in Chandigarh. Hardware, software, networking and support — all under one roof.</p>
+    </div>
+    <div class="ft-col">
+      <div class="ft-col-title">Products</div>
+      <ul>
+        <li><a href="#products">Servers</a></li>
+        <li><a href="#products">Desktops</a></li>
+        <li><a href="#products">Laptops</a></li>
+        <li><a href="#products">Networking</a></li>
+        <li><a href="#products">UPS Solutions</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <div class="ft-col-title">Services</div>
+      <ul>
+        <li><a href="#services">IT Setup</a></li>
+        <li><a href="#services">AMC Contracts</a></li>
+        <li><a href="#services">Cloud & M365</a></li>
+        <li><a href="#services">Helpdesk Support</a></li>
+        <li><a href="#software">Software Licenses</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <div class="ft-col-title">Contact</div>
+      <ul>
+        <li><a href="mailto:pc@thenexzen.in">pc@thenexzen.in</a></li>
+        <li><a href="tel:+919056266664">+91 90562 66664</a></li>
+        <li><a href="#contact">Get a Quote</a></li>
+        <li><a href="#brands">Our Brands</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2026 <span class="ft-green">Nexzen IT Technologies</span>. All rights reserved. | Plot 803, Industrial Area Phase 2, Chandigarh</p>
+    <p class="ft-copy">Made with ♥ in Chandigarh</p>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)} });
+},{threshold:0.1});
+document.querySelectorAll('.reveal, .reveal-left').forEach(el => obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+  });
+});
+</script>
+</body>
+</html>
